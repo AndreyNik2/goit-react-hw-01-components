@@ -1,27 +1,29 @@
-// import PropTypes from 'prop-types';
-// import { WiMoonAltFull, WiMoonAltNew } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import { Online, Offline, ListOFFriends, ListItem, Avatar, FriendName } from './FriendsList.styled';
 
+export const FriendsList = ({ friends }) => {
+  return (
+    <ListOFFriends>
+      {friends.map(({avatar, name, id, isOnline}) => (
+        <ListItem key={id}>
+          {(isOnline ? <Online></Online> : <Offline></Offline>)}
+          <Avatar
+            src={avatar}
+            alt="User avatar"
+            width="48"
+          />
+          <FriendName>{name}</FriendName>
+        </ListItem>
+      ))}
+    </ListOFFriends>
+  );
+};
 
-// export const FriendsList = ( { friends } ) =>
-// {
-//     return (
-//         <ul class="friend-list">
-//             { friends.map( friend => (
-//                 <li key={friend.id} class="item">
-//                     <span class="status">{friend.isOnline=true? WiMoonAltFull : WiMoonAltNew } </span>
-//                     <img class="avatar" src={friend.avatar} alt="User avatar" width="48" />
-//                     <p class="name">{ friend.name }</p>
-//                 </li>
-//             ))}
-//         </ul>
-//     )
-// }
-
-// FriendsList.propTypes = {
-//     friends: PropTypes.arrayOf( PropTypes.shape( {
-//         avatar : PropTypes.string.isRequired,
-//         name : PropTypes.string.isRequired,
-//         isOnline: PropTypes.bool.isRequired,
-//         id: PropTypes.number.isRequired
-//     } ) ),
-// }
+FriendsList.propTypes = {
+    friends: PropTypes.arrayOf( PropTypes.shape( {
+        avatar : PropTypes.string.isRequired,
+        name : PropTypes.string.isRequired,
+        isOnline: PropTypes.bool.isRequired,
+        id: PropTypes.number.isRequired
+    } ) ),
+}

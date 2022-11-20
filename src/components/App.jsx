@@ -3,6 +3,10 @@ import { Profile } from './Profile/Profile';
 import data from './Statistics/data.json'
 import { Statistic } from './Statistics/Statistics';
 import { statisticTitle } from './Statistics/Statistics';
+import friends from './FriendList/friends.json';
+import { FriendsList } from './FriendList/FriendsList';
+import transactions from './transactions/transactions.json'
+import { TransactionsList } from './transactions/Transactions';
 
 
 export const App = () =>
@@ -25,7 +29,12 @@ export const App = () =>
         stats = { data }
         title = { statisticTitle }
       />
-      
+      <FriendsList
+        friends={friends}
+      />
+      <TransactionsList
+        tranactions={ transactions }
+      />
     </div>
   );
 };
