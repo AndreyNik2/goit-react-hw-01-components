@@ -1,0 +1,16 @@
+.transaction {
+    border-collapse: collapse;
+    width: 450px;
+}
+
+th, td {
+    border: 1px solid #000;
+    height: 30px;
+    text-align: center;
+    background-color: #fff;
+}
+
+
+.transaction:nth-child(2n) {
+    background: #b8af4b;
+}
