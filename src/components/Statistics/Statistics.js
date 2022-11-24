@@ -6,7 +6,7 @@ export const Statistic = ( { stats, title } ) =>
 {
     return (
 <Statistics>
-    <Title>{title}</Title>
+   {title &&  (<Title>{title}</Title>)}
     <StatList>
         { stats.map( component => (
             <StatItem key={component.id}>
@@ -25,7 +25,5 @@ Statistic.propTypes = {
         label : PropTypes.string.isRequired,
         percentage : PropTypes.number.isRequired,
     } ) ),
-    title: PropTypes.string.isRequired
+    title: PropTypes.string
 }
-
-export const statisticTitle = 'UPLOAD STATS';
