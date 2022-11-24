@@ -13,7 +13,7 @@ export const TransactionsList = ( { tranactions } ) =>
           <th>Currency</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className={css.tableBody}>
         {tranactions.map(({ id, type, amount, currency }) => (
           <tr key={id}>
             <td>{type}</td>
@@ -21,7 +21,6 @@ export const TransactionsList = ( { tranactions } ) =>
             <td>{currency}</td>
           </tr>
         ))}
-        ;
       </tbody>
     </table>
   );
