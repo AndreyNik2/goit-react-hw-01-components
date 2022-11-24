@@ -11,6 +11,6 @@ th, td {
 }
 
 
-.transaction:nth-child(2n) {
+tbody:nth-child(2n) {
     background: #b8af4b;
 }
